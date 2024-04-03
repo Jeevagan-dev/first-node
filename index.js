@@ -2,7 +2,7 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
-const port = 3000;
+const PORT =  process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -39,6 +39,6 @@ app.post('/process',async (req,res)=>{
 
 })
 
-app.listen(port , ()=>{
+app.listen(PORT , ()=>{
     console.log("server is running");
 })
