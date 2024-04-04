@@ -18,7 +18,8 @@ app.get('/',(req,res)=>{
 })
 app.post('/process',async (req,res)=>{
     try {
-        const crypto = req.body.crypto;
+        const coin = req.body.crypto;
+        const crypto = coin.toLowerCase();
 
         const detail = await axios.get(`https://api.coingecko.com/api/v3/coins/${crypto}`,{
             headers:{
